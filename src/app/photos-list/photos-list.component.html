@@ -1,0 +1,15 @@
+<p>
+  photos-list works!
+</p>
+
+<!--<div *ngFor="let photo of photos">{{photo.url}}</div>-->
+
+<mat-list>
+  <mat-list-item *ngFor="let photo of photos"
+                 [class.selected]="photo === photos"
+                 (click)="showDetail(photo)">
+    {{photo.id}} &nbsp; {{photo.title}}
+    <!--<button (click)="showDetail(photo)">Open</button>-->
+  </mat-list-item>
+</mat-list>
+<app-photos-detail [photo] = photos></app-photos-detail>
